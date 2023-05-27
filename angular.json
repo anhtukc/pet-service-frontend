@@ -201,6 +201,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+
             "outputPath": "dist/client",
             "index": "projects/client/src/index.html",
             "main": "projects/client/src/main.ts",
