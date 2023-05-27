@@ -1,11 +1,11 @@
-export class BlogCategory {
+export interface BlogCategory {
     Id?: string;
     Name?: string;
     Description?: string;
     Status?: number;
   }
   
-  export class Blog {
+  export interface Blog {
     Id?: string;
     Name?: string;
     Author?: string;
@@ -17,7 +17,7 @@ export class BlogCategory {
     BlogCategoryId?: string;
   }
   
-  export class Account {
+  export interface Account {
     Id?: string;
     Permission?: string;
     Username?: string;
@@ -29,7 +29,7 @@ export class BlogCategory {
     lastupdate?: Date;
   }
   
-  export class Customer {
+  export interface Customer {
     Id?: string;
     FirstName?: string;
     LastName?: string;
@@ -43,7 +43,7 @@ export class BlogCategory {
     AccountId?: string;
   }
   
-  export class CustomerLocation {
+  export interface CustomerLocation {
     Id?: string;
     Latitude?: number;
     Longitude?: number;
@@ -51,7 +51,7 @@ export class BlogCategory {
     CustomerId?: string;
   }
   
-  export class Freelancer {
+  export interface Freelancer {
     Id?: string;
     FirstName?: string;
     LastName?: string;
@@ -69,7 +69,7 @@ export class BlogCategory {
     AccountId?: number;
   }
   
-  export class Location {
+  export interface Location {
     Id?: string;
     customerId?: string;
     Longitude?: number;
@@ -78,7 +78,7 @@ export class BlogCategory {
     Name?: string;
   }
   
-  export class Pet {
+  export interface Pet {
     Id?: string;
     Name?: string;
     Weight?: number;
@@ -92,7 +92,7 @@ export class BlogCategory {
     Customerid?: string;
   }
   
-  export class Service {
+  export interface Service {
     Id?: string;
     Name?: string;
     Description?: string;
@@ -100,7 +100,7 @@ export class BlogCategory {
     Status?: number;
   }
   
-  export class Bill {
+  export interface Bill {
     Id?: string;
     BillDate?: Date;
     FreeLancer?: string;
@@ -109,7 +109,7 @@ export class BlogCategory {
     Status?: number;
   }
   
-  export class BillDetail {
+  export interface BillDetail {
     Id?: string;
     Quantity?: number;
     UnitPrice?: number;
@@ -118,7 +118,7 @@ export class BlogCategory {
     BillId?: string;
   }
   
-  export class Booking {
+  export interface Booking {
     Id?: string;
     BookingTime?: Date;
     StartedLongitude?: number;
@@ -131,7 +131,7 @@ export class BlogCategory {
     Status?: number;
   }
   
-  export class Actions {
+  export interface Actions {
     Id?: string;
     Name?: string;
     AvailableTimeToRequest?: number;
@@ -139,7 +139,7 @@ export class BlogCategory {
     icon?: string;
   }
   
-  export class BookingAction {
+  export interface BookingAction {
     BookingId?: string;
     ActionId?: string;
     ActionName?: string;
@@ -149,7 +149,7 @@ export class BlogCategory {
     Status?: number;
   }
   
-  export class Employee {
+  export interface Employee {
     Id?: string;
     FirstName?: string;
     LastName?: string;
@@ -163,7 +163,7 @@ export class BlogCategory {
     AccountId?: string;
   }
   
-  export class AvailableTime {
+  export interface AvailableTime {
     Id?: string;
     StartTime?: Date;
     EndTime?: Date;
@@ -172,7 +172,7 @@ export class BlogCategory {
     Status?: number;
   }
   
-  export class Conversation {
+  export interface Conversation {
     Id?: string;
     RoomId?: string;
     Message?: string;
@@ -182,7 +182,7 @@ export class BlogCategory {
     TimeSent?: Date;
   }
   
-  export class FreelancerFeedback {
+  export interface FreelancerFeedback {
     Id?: string;
     FreelancerId?: string;
     CustomerId?: string;
@@ -190,7 +190,7 @@ export class BlogCategory {
     StarRating?: number;
   }
   
-  export class FreelancerService {
+  export interface FreelancerService {
     FreelancerId?: string;
     ServiceId?: string;
     HourlyPrice?: number;
@@ -198,4 +198,18 @@ export class BlogCategory {
   export interface login{
     username: string;
     password:string;
+}
+export interface Marker {
+  id: number;
+  latitude?: number;
+  longitude?: number;
+  orders?: number | null;
+  bookingId?: string;
+}
+
+export interface pagination{
+  pageSize: number;
+  currentPage: number;
+  sortColumn:string;
+  sortOrder:string;
 }

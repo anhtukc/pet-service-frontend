@@ -1,9 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { pagination } from 'src/app/Class/pagination';
-import { login } from 'src/app/Class/login';
+import { pagination } from '../class';
+import { login } from '../class';
+import { environment } from '../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +13,4 @@ export class LoginApiService {
   login(acc:login) {
     return this.http.post<any>(environment.apiUrl+"Authencation/Authenticate",acc);
   }
-
-  
 }
