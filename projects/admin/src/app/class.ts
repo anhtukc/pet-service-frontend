@@ -163,6 +163,7 @@ export interface BlogCategory {
     AccountId?: string;
   }
   
+  
   export interface AvailableTime {
     Id?: string;
     StartTime?: Date;

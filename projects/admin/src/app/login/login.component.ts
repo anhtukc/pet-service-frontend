@@ -33,6 +33,7 @@ export class LoginComponent implements OnInit {
       else if (result.message == 'success') {
         localStorage.setItem('token', result.token);
         // this.router.navigate(['dashboard']);
+        
       }
       else {
         console.log(result.details);
