@@ -1,0 +1,50 @@
+<ng-template #modalCustomer let-modal class="modal-xl">
+
+    <div class="modal-header modal-xl">
+        <h4 class="modal-title" id="modal-basic-title">Khách hàng</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        
+        <div class="form-group">
+            <label for="username" class="form-label">Tài khoản:</label>
+            <input type="text" id="username" name="username" class="form-control" [(ngModel)]="account.Username"
+                [ngModelOptions]="{standalone: true}">
+
+        </div>
+        <div class="form-group">
+            <label for="address" class="form-label">Mật khẩu:</label>
+            <input type="password" id="password" name="password" class="form-control" [(ngModel)]="account.Password"
+                [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group" *ngIf="typeModal == 'edit'">
+            <label for="name" class="form-label">Trạng thái:</label>
+            <select name="" id="" [(ngModel)]="account.Status" [ngModelOptions]="{standalone: true}"
+                class="form-control col-12">
+                <option *ngFor="let i = index; let status of statusMeaning" value="{{i}}">{{status}}</option>
+            </select>
+        </div>
+        <div class="form-group" *ngIf="typeModal == 'edit'">
+            <label for="name" class="form-label">Trạng thái:</label>
+            <select name="" id="" [(ngModel)]="account.Permission" [ngModelOptions]="{standalone: true}"
+                class="form-control col-12">
+                <option value="administrator">Quản trị viên</option>
+                <option value="administrator">Quản trị viên</option>
+                <option value="administrator">Quản trị viên</option>
+
+            </select>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="createNew()" *ngIf="typeModal=='create'">Làm
+            mới</button>
+        <button type="button" class="btn btn-outline-dark" (click)="create()" *ngIf="typeModal=='create'">Thêm</button>
+        <button type="button" class="btn btn-outline-dark" (click)="update()" *ngIf="typeModal=='edit'">Lưu</button>
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Đóng</button>
+    </div>
+
+</ng-template>

@@ -214,3 +214,23 @@ export interface pagination{
   sortColumn:string;
   sortOrder:string;
 }
+export interface basedSearchObject{
+  name?:string;
+  status?:number;
+  phoneNumber?:string;
+  startDate?:string;
+  endDate?:string;
+}
+
+export interface postingObjectWithId{
+  page:pagination;
+  searchObj:basedSearchObject;
+  id:string;
+}
+
+export interface response{
+  status?:number;
+  list?:Array<any>;
+  details?:string;
+  numberOfRecords?:number
+}
